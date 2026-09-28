@@ -45,6 +45,7 @@ YoungHoon02.github.io 포트폴리오를 수정할 때 현재 양식을 유지�
   - 헤더 로고(Crafting Pills), 프로필 역할 줄: IBM Plex Sans KR
   - 모노스페이스(코딩) 폰트는 쓰지 않음 — "AI가 만든 느낌"이 난다는 피드백
 - 헤더 로고 텍스트는 `Crafting Pills`
+- 한글 줄바꿈은 단어 단위(`body`의 `word-break: keep-all`). 개별 요소에서 덮어쓰지 않음
 - 모바일(600px 이하): 프로필 세로 정렬, 홈 블럭 1열
 
 ## 코드 스타일
