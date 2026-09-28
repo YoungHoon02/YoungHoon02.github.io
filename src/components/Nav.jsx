@@ -1,3 +1,5 @@
+import { goHome } from '../useHashRoute.js'
+
 const links = [
   ['', 'Home'],
   ['github', 'GitHub'],
@@ -7,11 +9,17 @@ const links = [
 export default function Nav({ route }) {
   return (
     <nav className="nav">
-      <a href="#/" className="nav-logo">Crafting Pills</a>
+      <a href="/" onClick={goHome} className="nav-logo">Crafting Pills</a>
       <ul>
         {links.map(([id, label]) => (
           <li key={label}>
-            <a href={`#/${id}`} className={route === id ? 'active' : undefined}>{label}</a>
+            <a
+              href={id ? `#/${id}` : '/'}
+              onClick={id ? undefined : goHome}
+              className={route === id ? 'active' : undefined}
+            >
+              {label}
+            </a>
           </li>
         ))}
       </ul>

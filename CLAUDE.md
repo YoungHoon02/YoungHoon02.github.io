@@ -5,7 +5,8 @@ YoungHoon02.github.io 포트폴리오를 수정할 때 현재 양식을 유지�
 ## 구조
 
 - React 19 + Vite, 라우터 라이브러리 없이 해시 라우팅(`src/useHashRoute.js`) 사용
-  - `#/` 홈, `#/github`, `#/game` — GitHub Pages 새로고침 404를 피하기 위해 해시 방식 유지
+  - `/` 홈, `#/github`, `#/game` — GitHub Pages 새로고침 404를 피하기 위해 해시 방식 유지
+  - 홈 링크는 `href="/"` + `onClick={goHome}` 사용. `#/` 링크를 쓰면 주소에 `/#/`가 남음
   - 새 하위 페이지 추가 시 `App.jsx`의 `pages`, `Nav.jsx`의 `links`, 필요하면 `HomeBlocks.jsx`의 `blocks`에 함께 등록
 - 콘텐츠는 모두 `src/data.js`에서 관리. 컴포넌트에 텍스트/링크를 하드코딩하지 않음
 - 배포: `main` push → `.github/workflows/deploy.yml`이 빌드 후 Pages 배포
