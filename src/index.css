@@ -150,11 +150,52 @@ main { max-width: 960px; margin: 0 auto; padding: 0 16px; }
 .game h3 { font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
 .projects { list-style: none; }
 .projects li + li { border-top: 1px solid var(--line); }
-.project { display: block; padding: 10px 0 10px 12px; margin-left: -12px; border-left: 2px solid transparent; }
+.project { position: relative; display: block; padding: 10px 0 10px 12px; margin-left: -12px; border-left: 2px solid transparent; overflow: hidden; }
+.project > :not(.project-thumb) { position: relative; }
+.project-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35);
+  mask-image: linear-gradient(to right, transparent 10%, #000 85%);
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.project:hover .project-thumb { opacity: 1; transform: none; }
 .project:hover { border-left-color: var(--accent); }
 .project:hover strong { color: #fff; }
 .project strong { font-weight: 600; }
 .project p { color: var(--muted); font-size: 0.85rem; margin: 2px 0 8px; }
+
+.note-list { list-style: none; display: grid; gap: 8px; }
+.note-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 20px; border-left-width: 3px; }
+.note-row:hover { background: var(--panel-hover); border-left-color: var(--accent); }
+.note-row strong { font-weight: 600; }
+.note-row time { font-size: 0.85rem; flex-shrink: 0; }
+
+.note-header { padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
+.note-header h1 { font-family: var(--display); font-size: 2rem; font-weight: 600; line-height: 1.3; }
+.note-header time { font-size: 0.9rem; }
+.note-body { max-width: 720px; line-height: 1.8; }
+.note-body > * + * { margin-top: 1em; }
+.note-body h2, .note-body h3 { font-family: var(--display); font-weight: 600; margin-top: 2em; }
+.note-body h2 { font-size: 1.4rem; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.note-body h3 { font-size: 1.15rem; }
+.note-body a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--muted); }
+.note-body a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.note-body ul, .note-body ol { padding-left: 1.4em; }
+.note-body blockquote { padding: 4px 16px; color: var(--muted); border-left: 3px solid var(--line); }
+.note-body hr { border: 0; border-top: 1px solid var(--line); }
+.note-body img { max-width: 100%; border-radius: var(--radius); }
+.note-body code { font-family: ui-monospace, Consolas, monospace; font-size: 0.88em; padding: 1px 5px; background: var(--panel); border: 1px solid var(--line); border-radius: 3px; }
+.note-body pre { padding: 14px 18px; overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+.note-body pre code { padding: 0; background: none; border: 0; font-size: 0.85rem; }
+.note-body table { border-collapse: collapse; }
+.note-body th, .note-body td { padding: 6px 12px; border: 1px solid var(--line); }
 
 .muted { color: var(--muted); }
 

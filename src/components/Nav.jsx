@@ -4,6 +4,7 @@ const links = [
   ['', 'Home'],
   ['github', 'GitHub'],
   ['game', 'Game'],
+  ['notes', 'Notes'],
 ]
 
 export default function Nav({ route }) {

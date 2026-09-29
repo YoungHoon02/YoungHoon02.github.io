@@ -1,5 +1,6 @@
-import { FaGithub, FaGamepad, FaArrowRight } from "react-icons/fa";
+import { FaGithub, FaGamepad, FaPen, FaArrowRight } from "react-icons/fa";
 import { repos, games } from "../data.js";
+import { notes } from "../notes.js";
 
 const projectCount = games.reduce((n, g) => n + g.projects.length, 0);
 
@@ -17,6 +18,13 @@ const blocks = [
     title: "Game",
     meta: `게임 ${games.length}개, 프로젝트 ${projectCount}개`,
     description: "게임 모드 개발 저장소 및 스팀 창작마당",
+  },
+  {
+    href: "#/notes",
+    icon: FaPen,
+    title: "Notes",
+    meta: `글 ${notes.length}개`,
+    description: "개발하며 남긴 메모와 기록",
   },
 ];
 
