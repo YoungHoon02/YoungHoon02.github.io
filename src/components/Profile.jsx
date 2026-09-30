@@ -1,15 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { FaGithub, FaEnvelope, FaSteam, FaDiscord } from 'react-icons/fa'
-import { profile, GITHUB_USER } from '../data.js'
+import { profile, GITHUB_USER, messages } from '../data.js'
 
 export default function Profile() {
-  const [copied, setCopied] = useState(false)
+  const [copyStatus, setCopyStatus] = useState('')
+  const copyTimer = useRef(null)
+  const copyAttempt = useRef(0)
 
-  const copyDiscord = () => {
-    navigator.clipboard.writeText(profile.discord).then(() => {
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
-    })
+  useEffect(() => () => {
+    clearTimeout(copyTimer.current)
+    copyAttempt.current += 1
+  }, [])
+
+  const copyDiscord = async () => {
+    const attempt = ++copyAttempt.current
+    clearTimeout(copyTimer.current)
+    setCopyStatus('')
+    try {
+      await navigator.clipboard.writeText(profile.discord)
+      if (attempt !== copyAttempt.current) return
+      setCopyStatus('success')
+      copyTimer.current = setTimeout(() => setCopyStatus(''), 1500)
+    } catch {
+      if (attempt !== copyAttempt.current) return
+      setCopyStatus('error')
+    }
   }
 
   return (
@@ -34,11 +49,15 @@ export default function Profile() {
               type="button"
               onClick={copyDiscord}
               aria-label="Discord"
-              data-tip={copied ? '복사됨 ✓' : `@${profile.discord} (클릭하여 복사)`}
+              data-tip={copyStatus === 'success' ? messages.discordCopied : `@${profile.discord} (${messages.discordCopyHint})`}
             >
               <FaDiscord />
             </button>
           </div>
+          <p className="muted" role="status" aria-live="polite" aria-atomic="true">
+            {copyStatus === 'success' && messages.discordCopied}
+            {copyStatus === 'error' && <>{messages.discordCopyFailed} <span>{profile.discord}</span></>}
+          </p>
         </div>
       </div>
     </section>

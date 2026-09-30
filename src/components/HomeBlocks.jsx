@@ -24,7 +24,7 @@ const blocks = [
     icon: FaPen,
     title: "Notes",
     meta: `글 ${notes.length}개`,
-    description: "개발하며 남긴 메모와 기록",
+    description: "잡동사니",
   },
 ];
 

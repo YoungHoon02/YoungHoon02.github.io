@@ -11,9 +11,16 @@ export const profile = {
   steam: `https://steamcommunity.com/profiles/${STEAM_ID}/`,
 };
 
-export const repos = [
-  // { name: 'repo-name', description: '설명', url: 'https://github.com/...', languages: ['C#'] },
-];
+export const repos = [];
+
+export const messages = {
+  notesEmpty: "아직 작성한 글이 없습니다.",
+  noteNotFound: "글을 찾을 수 없습니다. Notes 목록에서 다른 글을 확인해 주세요.",
+  reposEmpty: "아직 등록한 저장소가 없습니다.",
+  discordCopyHint: "클릭하여 복사",
+  discordCopied: "Discord 아이디를 복사했습니다.",
+  discordCopyFailed: "복사하지 못했습니다. 아래 아이디를 직접 복사해 주세요.",
+};
 
 const gh = (name) => `https://github.com/${GITHUB_USER}/${name}`;
 const workshop = (id) =>

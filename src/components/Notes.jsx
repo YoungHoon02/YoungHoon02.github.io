@@ -1,5 +1,6 @@
 import Section from "./Section.jsx";
 import { notes } from "../notes.js";
+import { messages } from "../data.js";
 
 export default function Notes({ param }) {
   if (param) {
@@ -16,7 +17,7 @@ export default function Notes({ param }) {
             <div className="note-body" dangerouslySetInnerHTML={{ __html: note.html }} />
           </article>
         ) : (
-          <p className="muted">Not Found.</p>
+          <p className="muted">{messages.noteNotFound}</p>
         )}
       </Section>
     );
@@ -24,7 +25,7 @@ export default function Notes({ param }) {
 
   return (
     <Section id="notes" back>
-      {notes.length === 0 && <p className="muted">Nothing Written Yet.</p>}
+      {notes.length === 0 && <p className="muted">{messages.notesEmpty}</p>}
       <ul className="note-list">
         {notes.map((n) => (
           <li key={n.slug}>
