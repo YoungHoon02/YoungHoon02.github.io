@@ -1,30 +1,30 @@
 import { FaGithub, FaGamepad, FaPen, FaArrowRight } from "react-icons/fa";
-import { repos, games } from "../data.js";
+import { repos, games, homeDescriptions, messages } from "../data.js";
 import { notes } from "../notes.js";
 
 const projectCount = games.reduce((n, g) => n + g.projects.length, 0);
 
 const blocks = [
   {
-    href: "#/github",
-    icon: FaGithub,
-    title: "GitHub",
-    meta: `저장소 ${repos.length}개`,
-    description: "개인 프로젝트와 오픈소스",
-  },
-  {
     href: "#/game",
     icon: FaGamepad,
     title: "Game",
     meta: `게임 ${games.length}개, 프로젝트 ${projectCount}개`,
-    description: "게임 모드 개발 저장소 및 스팀 창작마당",
+    description: homeDescriptions.game,
+  },
+  {
+    href: "#/github",
+    icon: FaGithub,
+    title: "GitHub",
+    meta: `저장소 ${repos.length}개`,
+    description: repos.length ? homeDescriptions.github : messages.reposEmpty,
   },
   {
     href: "#/notes",
     icon: FaPen,
     title: "Notes",
     meta: `글 ${notes.length}개`,
-    description: "잡동사니",
+    description: notes.length ? homeDescriptions.notes : messages.notesEmpty,
   },
 ];
 

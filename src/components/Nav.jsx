@@ -2,8 +2,8 @@ import { goHome } from '../useHashRoute.js'
 
 const links = [
   ['', 'Home'],
-  ['github', 'GitHub'],
   ['game', 'Game'],
+  ['github', 'GitHub'],
   ['notes', 'Notes'],
 ]
 

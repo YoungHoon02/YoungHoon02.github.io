@@ -15,7 +15,7 @@ const slug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^
 
 export default function Games() {
   return (
-    <Section id="game" back>
+    <Section id="game">
       <div className="games">
         {games.map((g) => (
           <article key={g.appId} className="game">

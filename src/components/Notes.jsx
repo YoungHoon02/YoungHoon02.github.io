@@ -24,7 +24,7 @@ export default function Notes({ param }) {
   }
 
   return (
-    <Section id="notes" back>
+    <Section id="notes">
       {notes.length === 0 && <p className="muted">{messages.notesEmpty}</p>}
       <ul className="note-list">
         {notes.map((n) => (

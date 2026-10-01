@@ -4,7 +4,7 @@ import { repos, messages } from "../data.js";
 
 export default function Github() {
   return (
-    <Section id="github" back>
+    <Section id="github">
       {repos.length === 0 && <p className="muted">{messages.reposEmpty}</p>}
       <div className="repos">
         {repos.map((repo) => (

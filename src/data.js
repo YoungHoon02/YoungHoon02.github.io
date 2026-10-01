@@ -13,9 +13,16 @@ export const profile = {
 
 export const repos = [];
 
+export const homeDescriptions = {
+  game: "게임 모드와 플레이 도구",
+  github: "개인 프로젝트와 오픈소스",
+  notes: "개발 기록과 메모",
+};
+
 export const messages = {
   notesEmpty: "아직 작성한 글이 없습니다.",
-  noteNotFound: "글을 찾을 수 없습니다. Notes 목록에서 다른 글을 확인해 주세요.",
+  noteNotFound:
+    "글을 찾을 수 없습니다. Notes 목록에서 다른 글을 확인해 주세요.",
   reposEmpty: "아직 등록한 저장소가 없습니다.",
   discordCopyHint: "클릭하여 복사",
   discordCopied: "Discord 아이디를 복사했습니다.",
@@ -33,14 +40,13 @@ export const games = [
     projects: [
       {
         name: "Battle Log",
-        description:
-          "전투를 턴별 텍스트 로그로 남기는 BepInEx 플러그인 (인게임 오버레이 포함)",
+        description: "턴별 전투 기록을 게임 화면에서 확인하는 모드",
         url: gh("astral-party-battle-log"),
         languages: ["C#"],
       },
       {
         name: "Anim Speed Tweak",
-        description: "BepInEx·Harmony 기반 애니메이션 재생 개선 모드",
+        description: "애니메이션 재생 속도를 개선하는 모드",
         url: gh("astral-party-speedup-release"),
         languages: ["C#"],
       },
@@ -52,7 +58,7 @@ export const games = [
     projects: [
       {
         name: "Exotic Macro",
-        description: "픽셀 색상 인식 기반 엑조틱 파밍 자동화 매크로",
+        description: "엑조틱 파밍을 자동화하는 매크로",
         url: gh("TheDivision2-Exotic-Macro"),
         languages: ["Python"],
       },
