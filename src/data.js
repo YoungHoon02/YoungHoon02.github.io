@@ -50,6 +50,12 @@ export const games = [
         url: gh("astral-party-speedup-release"),
         languages: ["C#"],
       },
+      {
+        name: "Chip Guide",
+        description: "초심자를 위한 칩 선택 도움을 주는 UI 모드",
+        url: gh("astral-party-chip-guide"),
+        languages: ["C#"],
+      },
     ],
   },
   {
