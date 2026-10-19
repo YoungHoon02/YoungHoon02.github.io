@@ -10,7 +10,7 @@ const links = [
 export default function Nav({ route }) {
   return (
     <nav className="nav">
-      <a href="/" onClick={goHome} className="nav-logo">Crafting Pills</a>
+      <a href="/" onClick={goHome} className="nav-logo"><i aria-hidden />Crafting Pills</a>
       <ul>
         {links.map(([id, label]) => (
           <li key={label}>

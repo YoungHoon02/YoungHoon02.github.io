@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "fetch-commits": "node scripts/fetch-commits.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

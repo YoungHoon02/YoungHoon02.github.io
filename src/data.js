@@ -19,8 +19,23 @@ export const homeDescriptions = {
   notes: "개발 기록과 메모",
 };
 
+export const labels = {
+  github: "GitHub",
+  commits: (year, count) => ({ year, count, text: ["올해 ", "번 커밋했습니다"] }),
+  recent: "최근 활동",
+  gameMeta: (games, projects) => `게임 ${games}개, 프로젝트 ${projects}개`,
+  repoMeta: (n) => `저장소 ${n}개`,
+  noteMeta: (n) => `글 ${n}개`,
+  gameCount: "게임 / 프로젝트",
+  repoCount: "저장소",
+  noteCount: "글",
+  steamStore: "Steam 상점 ↗",
+};
+
 export const messages = {
   notesEmpty: "아직 작성한 글이 없습니다.",
+  notesEmptyHint: "첫 글을 쓰면 여기에 나타납니다.",
+  reposEmptyHint: "저장소를 등록하면 여기에 나타납니다.",
   noteNotFound:
     "글을 찾을 수 없습니다. Notes 목록에서 다른 글을 확인해 주세요.",
   reposEmpty: "아직 등록한 저장소가 없습니다.",
