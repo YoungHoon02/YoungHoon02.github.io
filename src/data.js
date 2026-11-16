@@ -2,12 +2,14 @@ export const GITHUB_USER = "YoungHoon02";
 
 const STEAM_ID = "76561198130461833";
 
+const reveal = (encoded) => atob(encoded.split("").reverse().join(""));
+
 export const profile = {
   name: "Pills",
   role: "Undergraduate Student",
   intro: "게임을 사랑하는 개발자입니다. AI를 통하여 개발하는 것을 즐깁니다.",
-  email: "sivert2729@gmail.com",
-  discord: "Sivert2729",
+  email: reveal("=02bj5CbpFWbnBUOycjM0JXZ2l2c"),
+  discord: reveal("==QOycjM0JXZ2l2U"),
   steam: `https://steamcommunity.com/profiles/${STEAM_ID}/`,
 };
 

@@ -60,7 +60,7 @@ export default function Profile() {
           type="button"
           onClick={copyDiscord}
           aria-label="Discord"
-          data-tip={copyStatus === 'success' ? messages.discordCopied : `@${profile.discord} (${messages.discordCopyHint})`}
+          data-tip={copyStatus === 'success' ? messages.discordCopied : `Discord (${messages.discordCopyHint})`}
         >
           <FaDiscord />
         </button>
